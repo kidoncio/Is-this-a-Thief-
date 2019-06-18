@@ -2,6 +2,10 @@ extends "res://Scenes/Scripts/Character.gd"
 
 var motion: Vector2 = Vector2()
 
+func _ready():
+	Global.Player = self
+
+
 func _process(delta):
 	update_motion(delta)
 	move_and_slide(motion)
@@ -25,10 +29,10 @@ func update_motion(delta: float) -> void:
 		motion.x = lerp(motion.x, 0, FRICTION)
 
 
-func _input(event) -> void:
-	if Input.is_action_just_pressed("ui_select"):
-		toggle_torch()
-
-
-func toggle_torch():
-	$Torch.enabled = !$Torch.enabled
+#func _input(event) -> void:
+#	if Input.is_action_just_pressed("ui_select"):
+#		toggle_torch()
+#
+#
+#func toggle_torch():
+#	$Torch.enabled = !$Torch.enabled
