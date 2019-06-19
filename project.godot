@@ -60,6 +60,7 @@ ui_down={
 2d_physics/layer_2="Walls"
 2d_physics/layer_3="SecurityCameras"
 2d_physics/layer_4="Guards"
+2d_physics/layer_5="Furnitures"
 
 [rendering]
 
