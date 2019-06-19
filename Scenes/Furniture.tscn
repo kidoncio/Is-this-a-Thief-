@@ -1,0 +1,387 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.0835, 19.8183 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.0195, 20.816 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 90.3994, 20.8122 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 30.53
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 23.6278, 21.8111 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 27.0649, 24.02 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 87.2396, 29.008 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 15.7828
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 9.9524
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 27.1641, 27.2829 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 27.2445, 27.1966 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 17.7467, 18.3583 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 49.9858, 13.1059 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 30.2607, 30.0961 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 94.0163, 30.2827 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 64.0057, 30.6224 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 62.7466, 31.3859 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 32.0203, 18.971 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 31.9777, 31.4883 )
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 19.2972
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 26.4659, 8.88977 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 94.1077, 30.7243 )
+
+[node name="Furniture" type="Node2D"]
+
+[node name="OfficeChair" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1088, 1216, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OfficeChair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeChair/StaticBody2D"]
+position = Vector2( 0, 0.874123 )
+shape = SubResource( 1 )
+
+[node name="CoffeChair" type="Sprite" parent="."]
+position = Vector2( 127.98, 1.1376 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1152, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoffeChair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeChair/StaticBody2D"]
+position = Vector2( 0.174835, 0.349648 )
+shape = SubResource( 2 )
+
+[node name="Sofa" type="Sprite" parent="."]
+position = Vector2( 279.98, 1.1376 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 896, 1152, 192, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sofa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sofa/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="CoffeTable" type="Sprite" parent="."]
+position = Vector2( 279.03, 84.7375 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1216, 1152, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoffeTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeTable/StaticBody2D"]
+shape = SubResource( 4 )
+
+[node name="BlueChair" type="Sprite" parent="."]
+position = Vector2( -1.04004, 84.0024 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1024, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueChair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueChair/StaticBody2D"]
+position = Vector2( 0.157776, -0.473335 )
+shape = SubResource( 5 )
+
+[node name="GreenChair" type="Sprite" parent="."]
+position = Vector2( -85.5756, 84.0024 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1088, 1024, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GreenChair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenChair/StaticBody2D"]
+position = Vector2( -0.631111, 0 )
+shape = SubResource( 6 )
+
+[node name="GreenSofa" type="Sprite" parent="."]
+position = Vector2( 277.448, -64.1061 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 896, 1024.5, 192, 63.4983 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GreenSofa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenSofa/StaticBody2D"]
+position = Vector2( -0.263489, -0.595695 )
+shape = SubResource( 7 )
+
+[node name="Plant" type="Sprite" parent="."]
+position = Vector2( -92.0295, -97.5658 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1600, 258.206, 64, 61.7938 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Plant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/StaticBody2D"]
+position = Vector2( 3.38903, -1.8075 )
+shape = SubResource( 8 )
+
+[node name="LittlePlant" type="Sprite" parent="."]
+position = Vector2( -86.6146, -7.31586 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 512, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LittlePlant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LittlePlant/StaticBody2D"]
+position = Vector2( -0.315552, 1.57779 )
+shape = SubResource( 9 )
+
+[node name="AngledBox" type="Sprite" parent="."]
+position = Vector2( -12.0296, -92.5658 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 320, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AngledBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AngledBox/StaticBody2D"]
+rotation = -0.15708
+shape = SubResource( 10 )
+
+[node name="Box" type="Sprite" parent="."]
+position = Vector2( 68.1282, -96.5132 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1281.74, 257.69, 62.2008, 60.9201 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box/StaticBody2D"]
+position = Vector2( -0.968552, -0.19371 )
+shape = SubResource( 11 )
+
+[node name="LittleBox" type="Sprite" parent="."]
+position = Vector2( 68.9703, -166.566 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1344, 256.962, 64, 63.0383 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LittleBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LittleBox/StaticBody2D"]
+position = Vector2( 0.514046, -0.12851 )
+shape = SubResource( 12 )
+
+[node name="TV" type="Sprite" parent="."]
+position = Vector2( 272.461, -149.985 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1216, 128, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TV"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TV/StaticBody2D"]
+shape = SubResource( 13 )
+
+[node name="OfficeTable" type="Sprite" parent="."]
+position = Vector2( -82.668, 185.096 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 1088, 63.2573, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OfficeTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeTable/StaticBody2D"]
+position = Vector2( 0.427185, 0 )
+shape = SubResource( 14 )
+
+[node name="BigOfficeTable" type="Sprite" parent="."]
+position = Vector2( 71.985, 183.664 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1088, 192, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BigOfficeTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BigOfficeTable/StaticBody2D"]
+shape = SubResource( 15 )
+
+[node name="StoveAndSink" type="Sprite" parent="."]
+position = Vector2( 258.802, 179.152 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1600, 705.278, 128, 62.7222 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StoveAndSink"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoveAndSink/StaticBody2D"]
+shape = SubResource( 16 )
+
+[node name="Stove" type="Sprite" parent="."]
+position = Vector2( 395.982, 178.249 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1602.97, 640.713, 125.026, 63.2867 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stove"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/StaticBody2D"]
+position = Vector2( 0.138458, 0.525879 )
+shape = SubResource( 17 )
+
+[node name="Refrigerator" type="Sprite" parent="."]
+position = Vector2( 496.16, 177.347 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1664, 578.206, 64, 61.7942 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Refrigerator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerator/StaticBody2D"]
+position = Vector2( 0, 12.4383 )
+shape = SubResource( 18 )
+
+[node name="KitchenCounter" type="Sprite" parent="."]
+position = Vector2( 499.01, 92.797 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 640, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="KitchenCounter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenCounter/StaticBody2D"]
+position = Vector2( 0, 1.28818 )
+shape = SubResource( 19 )
+
+[node name="Plates" type="Sprite" parent="."]
+position = Vector2( 422.168, 91.7443 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1600, 448, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plates/StaticBody2D"]
+position = Vector2( -2.43494, -0.405838 )
+shape = SubResource( 20 )
+
+[node name="Stool" type="Sprite" parent="."]
+position = Vector2( 501.328, 34.7365 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 837.692, 1111.04, 52.2814, 18.2649 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stool"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stool/StaticBody2D"]
+shape = SubResource( 21 )
+
+[node name="KitchenTable" type="Sprite" parent="."]
+position = Vector2( 503.649, -31.8086 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1024.83, 192, 63.1735 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="KitchenTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenTable/StaticBody2D"]
+shape = SubResource( 22 )
