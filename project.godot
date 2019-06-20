@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Is this a burglar?"
 run/main_scene="res://Scenes/Levels/Level1.tscn"
-config/icon="res://icon.png"
+config/icon="res://GFX/PNG/burglar.png"
 
 [autoload]
 
