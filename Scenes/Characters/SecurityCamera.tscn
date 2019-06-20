@@ -26,7 +26,9 @@ tracks/0/keys = {
 "values": [ -30.0, -30.0, 30.0, 30.0 ]
 }
 
-[node name="SecurityCamera" type="Node2D"]
+[node name="SecurityCamera" type="Node2D" groups=[
+"NPC",
+]]
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.3, 0.5 )
