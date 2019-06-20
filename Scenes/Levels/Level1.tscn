@@ -18,6 +18,7 @@ outlines = [ PoolVector2Array( 735.8, 395.684, 730.654, 702.217, 1015.13, 702.21
 [node name="Level1" type="Node2D"]
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -53,7 +54,7 @@ position = Vector2( 2061.9, 395.377 )
 position = Vector2( 1952.86, 96.466 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0901961, 0.156863, 0.423529, 1 )
+color = Color( 0.0588235, 0.113725, 0.32549, 1 )
 
 [node name="Floors" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -119,6 +120,7 @@ rotation = 1.5708
 position = Vector2( 1096.01, 481.709 )
 
 [node name="Guards" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Guard" parent="Guards" instance=ExtResource( 7 )]
 position = Vector2( 1786.55, 579.451 )
