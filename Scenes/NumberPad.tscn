@@ -1,0 +1,282 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Scripts/NumberPad.gd" type="Script" id=2]
+[ext_resource path="res://GFX/Interface/PNG/metalPanel.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Interface/PNG/dotBlue.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Interface/PNG/metalPanel_blueCorner.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://GFX/Interface/Fonts/kenvector_future.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+outline_color = Color( 0.0235294, 0.0117647, 0.0117647, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[node name="NumberPad" type="Popup"]
+anchor_right = 0.293
+anchor_bottom = 0.667
+margin_right = -0.0320129
+margin_bottom = -0.200043
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer"]
+editor/display_folded = true
+margin_right = 300.0
+margin_bottom = 400.0
+alignment = 1
+
+[node name="DisplayContainer" type="CenterContainer" parent="VSplitContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 57.0
+margin_right = 300.0
+margin_bottom = 137.0
+
+[node name="Display" type="RichTextLabel" parent="VSplitContainer/VBoxContainer/DisplayContainer"]
+margin_left = 10.0
+margin_right = 290.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 280, 80 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "TEST"
+text = "TEST"
+scroll_active = false
+
+[node name="ButtonContainer" type="CenterContainer" parent="VSplitContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 141.0
+margin_right = 300.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 300, 200 )
+
+[node name="ButtonGrid" type="GridContainer" parent="VSplitContainer/VBoxContainer/ButtonContainer"]
+editor/display_folded = true
+margin_left = 60.0
+margin_top = 10.0
+margin_right = 240.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 180, 180 )
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 3
+
+[node name="Button1" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_right = 54.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "1"
+
+[node name="Button2" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 62.0
+margin_right = 116.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "2"
+
+[node name="Button3" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 124.0
+margin_right = 178.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "3"
+
+[node name="Button4" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_top = 47.0
+margin_right = 54.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "4"
+
+[node name="Button5" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 62.0
+margin_top = 47.0
+margin_right = 116.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "5"
+
+[node name="Button6" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 124.0
+margin_top = 47.0
+margin_right = 178.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "6"
+
+[node name="Button7" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_top = 94.0
+margin_right = 54.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "7"
+
+[node name="Button8" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 62.0
+margin_top = 94.0
+margin_right = 116.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "8"
+
+[node name="Button9" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 124.0
+margin_top = 94.0
+margin_right = 178.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "9"
+
+[node name="Light" type="TextureRect" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_top = 141.0
+margin_right = 54.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+mouse_filter = 0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="Button0" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 62.0
+margin_top = 141.0
+margin_right = 116.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "0"
+
+[node name="ButtonOk" type="Button" parent="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid"]
+margin_left = 124.0
+margin_top = 141.0
+margin_right = 178.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 25, 25 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_styles/normal = SubResource( 3 )
+text = "#"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+[connection signal="pressed" from="VSplitContainer/VBoxContainer/ButtonContainer/ButtonGrid/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
