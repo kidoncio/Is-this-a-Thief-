@@ -1,6 +1,10 @@
 extends "res://Scenes/Scripts/Character.gd"
 
 var motion: Vector2 = Vector2()
+var night_vision: bool = false
+var vision_change_on_cooldown: bool = false
+
+var vision_mode = Global.DARK_VISION_MODE_METHOD
 
 func _ready():
 	Global.Player = self
@@ -29,10 +33,20 @@ func update_motion(delta: float) -> void:
 		motion.x = lerp(motion.x, 0, FRICTION)
 
 
-#func _input(event) -> void:
-#	if Input.is_action_just_pressed("ui_select"):
-#		toggle_torch()
-#
-#
-#func toggle_torch():
-#	$Torch.enabled = !$Torch.enabled
+func _input(event) -> void:
+	if !vision_change_on_cooldown && Input.is_action_just_pressed("ui_select"):
+		vision_change_on_cooldown = true
+		cycle_vision_mode()
+		$VisionModeTimer.start()
+
+
+func cycle_vision_mode():
+	if vision_mode == Global.DARK_VISION_MODE_METHOD:
+		get_tree().call_group(Global.INTERFACE_GROUP, Global.NIGHT_VISION_MODE_METHOD)
+		vision_mode = Global.NIGHT_VISION_MODE_METHOD
+	elif vision_mode == Global.NIGHT_VISION_MODE_METHOD:
+		get_tree().call_group(Global.INTERFACE_GROUP, Global.DARK_VISION_MODE_METHOD)
+		vision_mode = Global.DARK_VISION_MODE_METHOD
+
+func _on_VisionModeTimer_timeout():
+	vision_change_on_cooldown = false
