@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Is this a Thief?"
+config/name="Is this a burglar?"
 run/main_scene="res://Scenes/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
