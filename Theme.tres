@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=13 format=2]
 
 [ext_resource path="res://GFX/Interface/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_green.png" type="Texture" id=2]
@@ -16,6 +16,23 @@ region_rect = Rect2( 0, 0, 100, 100 )
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://GFX/Interface/Fonts/kenvector_future_thin.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 13 )
 
 [sub_resource type="DynamicFontData" id=6]
 font_path = "res://GFX/Interface/Fonts/kenvector_future.ttf"
@@ -46,8 +63,8 @@ ItemList/constants/hseparation = 4
 ItemList/constants/icon_margin = 4
 ItemList/constants/line_separation = 2
 ItemList/constants/vseparation = 2
-ItemList/fonts/font = null
-ItemList/styles/bg = null
+ItemList/fonts/font = SubResource( 11 )
+ItemList/styles/bg = SubResource( 12 )
 ItemList/styles/bg_focus = null
 ItemList/styles/cursor = null
 ItemList/styles/cursor_unfocused = null
@@ -59,7 +76,7 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = null
+Label/fonts/font = SubResource( 14 )
 Label/styles/normal = null
 RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )

@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	update_motion(delta)
 	move_and_slide(motion * velocity_multiplier)
-	disguise_label_update()
+	update_disguise_gui()
 
 
 func update_motion(delta: float) -> void:
@@ -98,9 +98,16 @@ func disguise() -> void:
 	velocity_multiplier = disguise_slowdown
 	
 	disguises -= 1
+	update_disguise_gui()
+	
 	disguised = true
 	
 	$DisguiseTimer.start()
+
+
+func update_disguise_gui() -> void:
+	disguise_display_update()
+	disguise_label_update()
 
 
 func disguise_label_update() -> void:
@@ -109,3 +116,7 @@ func disguise_label_update() -> void:
 	
 	$DisguiseLabel.rect_rotation = - rotation_degrees
 	$DisguiseLabel.text = str($DisguiseTimer.time_left).pad_decimals(2)
+
+
+func disguise_display_update() -> void:
+	get_tree().call_group(Global.DISGUISE_DISPLAY_GROUP,  Global.UPDATE_DISGUISE_DISPLAY_METHOD, disguises)

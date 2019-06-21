@@ -133,6 +133,7 @@ rotation = -1.5708
 collision_mask = 9
 
 [node name="Doors" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Door" parent="Doors" instance=ExtResource( 9 )]
 position = Vector2( 863.985, 162.837 )
@@ -149,6 +150,7 @@ position = Vector2( 1631.43, 96.1148 )
 rotation = 1.5708
 
 [node name="SecurityCameras" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SecurityCamera2" parent="SecurityCameras" instance=ExtResource( 10 )]
 position = Vector2( 1095.59, 24.6132 )
@@ -185,5 +187,8 @@ autoplay = true
 [node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
 
 [node name="GUI" parent="." instance=ExtResource( 15 )]
+
+[node name="WallsAndFurnitures" type="Node" parent="."]
+editor/display_folded = true
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
