@@ -18,7 +18,15 @@ func end_game() -> void:
 
 
 func update_suspicion() -> void:
+	if suspicion == value:
+		return
+	
 	suspicion -= suspicion_dropoff
+	
+	if suspicion > 65:
+		suspicion_step = 2
+	else:
+		suspicion_step = 1
 	
 	if suspicion > max_value:
 		suspicion = 100
