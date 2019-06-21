@@ -7,6 +7,7 @@ var destinations: Node2D
 # Groups
 const NPC_GROUP: String = "NPC"
 const INTERFACE_GROUP: String = "interface"
+const LABELS_GROUP: String = "labels"
 
 # Volume
 var VOLUME_VISION_SFX: float = -20.0

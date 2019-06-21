@@ -1,13 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Scripts/LockedDoor.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/NumberPad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GFX/Interface/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.3759, 19.5038 )
 
-[node name="LockedDoor" instance=ExtResource( 1 )]
+[sub_resource type="DynamicFont" id=3]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 3 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+
+[node name="LockedDoor" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
@@ -15,6 +33,7 @@ modulate = Color( 0.262745, 0.27451, 0.294118, 1 )
 self_modulate = Color( 1, 1, 1, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+editor/display_folded = true
 
 [node name="NumberPad" parent="CanvasLayer" index="0" instance=ExtResource( 3 )]
 
@@ -24,5 +43,16 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDetection" index="0"]
 position = Vector2( -0.237823, 28.3014 )
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="." index="6" groups=[
+"labels",
+]]
+visible = false
+margin_left = 0.19368
+margin_top = 17.7644
+margin_right = 51.1937
+margin_bottom = 35.7644
+theme = SubResource( 2 )
+text = "TESTE"
 [connection signal="combination_correct" from="CanvasLayer/NumberPad" to="." method="_on_NumberPad_combination_correct"]
 [connection signal="body_entered" from="ExitDetection" to="." method="_on_ExitDetection_body_entered"]

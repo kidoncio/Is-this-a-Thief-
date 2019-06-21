@@ -112,13 +112,14 @@ collision_mask = 13
 format = 1
 
 [node name="Computers" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 981.025, 63.8152 )
 
 [node name="Computer" parent="Computers" instance=ExtResource( 7 )]
 position = Vector2( -95.8147, 736.087 )
+lock_group = "CTO Office"
 
 [node name="LockedDoors" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="LockedDoor" parent="LockedDoors" instance=ExtResource( 8 )]
 position = Vector2( 2143.86, 223.295 )
@@ -179,5 +180,5 @@ volume_db = -15.0
 autoplay = true
 
 [node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
-[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]

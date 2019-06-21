@@ -21,9 +21,11 @@ func _on_NumberPad_combination_correct():
 	open()
 
 
-func _on_Computer_combination(numbers: Array):
-	combination = numbers
+func _on_Computer_combination(combination_to_set: Array, lock_group_to_set: String = "Unset on LockedDoor"):
+	combination = combination_to_set
 	$CanvasLayer/NumberPad.combination = combination
+	$Label.rect_rotation = - rotation_degrees
+	$Label.text = lock_group_to_set
 
 
 func _on_ExitDetection_body_entered(body):

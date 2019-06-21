@@ -3,6 +3,9 @@ extends Area2D
 var can_click: bool = false
 var combination = []
 
+export var lock_group: String = "UNSET"
+export var combination_length: int = 4
+
 onready var _combination_generator = get_tree().get_root().find_node("CombinationGenerator", true, false)
 
 signal combination
@@ -12,13 +15,15 @@ const COMBINATION_SIGNAL: String = "combination"
 
 func _ready():
 	get_combination()
+	$Label.rect_rotation = - rotation_degrees
+	$Label.text = lock_group
 
 
 func get_combination() -> void:
-	combination = _combination_generator.generate_combination()
+	combination = _combination_generator.generate_combination(combination_length)
 	set_popup_text()
 	
-	emit_signal(COMBINATION_SIGNAL, combination)
+	emit_signal(COMBINATION_SIGNAL, combination, lock_group)
 
 
 func set_popup_text() -> void:
