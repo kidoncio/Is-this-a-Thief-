@@ -8,13 +8,23 @@ var vision_mode = Global.DARK_VISION_MODE_METHOD
 
 var disguised: bool = false
 
+const DEFAULT_VELOCITY_MULTIPLIER: float = 1.0
+var velocity_multiplier: float = 1
+
+export var disguises: int = 3 # How many disguises you start with
+export var disguise_duration: int = 5 # How long a disguise can last
+export var disguise_slowdown: float = 0.5
+
 func _ready():
 	Global.Player = self
-	collision_layer = 1
+	collision_layer = Global.PLAYER_LAYER
+	$DisguiseTimer.wait_time = disguise_duration
+	reveal()
 
 func _process(delta):
 	update_motion(delta)
-	move_and_slide(motion)
+	move_and_slide(motion * velocity_multiplier)
+	disguise_label_update()
 
 
 func update_motion(delta: float) -> void:
@@ -65,21 +75,37 @@ func _on_VisionModeTimer_timeout():
 func toggle_disguise() -> void:
 	if disguised:
 		reveal()
-	else:
+	elif disguises > 0:
 		disguise()
 
 
 func reveal() -> void:
+	$DisguiseLabel.visible = false
 	$Sprite.texture = load(Global.PLAYER_SPRITE)
 	$Light2D.texture = load(Global.PLAYER_SPRITE)
-	collision_layer = 1
+	collision_layer = Global.PLAYER_LAYER
+	velocity_multiplier = DEFAULT_VELOCITY_MULTIPLIER
 	
 	disguised = false
 
 
 func disguise() -> void:
+	$DisguiseLabel.visible = true
 	$Sprite.texture = load(Global.SOLDIER_SPRITE)
 	$Light2D.texture = load(Global.SOLDIER_SPRITE)
-	collision_layer = 16
+	collision_layer = Global.DISGUISE_LAYER
 	
+	velocity_multiplier = disguise_slowdown
+	
+	disguises -= 1
 	disguised = true
+	
+	$DisguiseTimer.start()
+
+
+func disguise_label_update() -> void:
+	if !disguised:
+		return
+	
+	$DisguiseLabel.rect_rotation = - rotation_degrees
+	$DisguiseLabel.text = str($DisguiseTimer.time_left).pad_decimals(2)

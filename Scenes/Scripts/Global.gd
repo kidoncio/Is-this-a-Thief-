@@ -32,3 +32,7 @@ const SOLDIER_SPRITE: String = "res://GFX/PNG/Soldier 1/soldier1_stand.png"
 # SFXs
 const LOCKED_DOOR_CORRECT: String = "res://SFX/threeTone1.ogg"
 const LOCKED_DOOR_BUTTON_PRESSED: String = "res://SFX/twoTone1.ogg"
+
+# Layers Bits
+const PLAYER_LAYER: int = 1
+const DISGUISE_LAYER: int = 16
