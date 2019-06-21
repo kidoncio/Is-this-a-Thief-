@@ -8,16 +8,19 @@ const OPEN_ANIMATION: String = "open"
 const CLOSE_ANIMATION: String = "close"
 
 func _on_Door_body_entered(body):
-	if body != Global.Player && !$AnimationPlayer.is_playing() && !is_open:
+	if body != Global.Player && !is_open:
 		open()
 	else:
 		player_can_open = true
 
 
 func open() -> void:
-	$AnimationPlayer.play(OPEN_ANIMATION)
+	if $AnimationPlayer.is_playing():
+		return
 	
 	is_open = true
+	
+	$AnimationPlayer.play(OPEN_ANIMATION)
 
 
 func close() -> void:
@@ -35,5 +38,5 @@ func _on_Door_body_exited(body):
 
 
 func _input_event(viewport, event, shape_idx):
-	if player_can_open && Input.is_mouse_button_pressed(BUTTON_LEFT) && !$AnimationPlayer.is_playing():
+	if player_can_open && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		open()

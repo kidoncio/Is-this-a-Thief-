@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Scripts/LockedDoor.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/NumberPad.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.3759, 19.5038 )
 
 [node name="LockedDoor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -11,10 +14,15 @@ script = ExtResource( 2 )
 modulate = Color( 0.262745, 0.27451, 0.294118, 1 )
 self_modulate = Color( 1, 1, 1, 1 )
 
-[node name="DetectionArea" parent="." index="1"]
-visible = false
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
 
 [node name="NumberPad" parent="CanvasLayer" index="0" instance=ExtResource( 3 )]
+
+[node name="ExitDetection" type="Area2D" parent="." index="5"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDetection" index="0"]
+position = Vector2( -0.237823, 28.3014 )
+shape = SubResource( 1 )
 [connection signal="combination_correct" from="CanvasLayer/NumberPad" to="." method="_on_NumberPad_combination_correct"]
+[connection signal="body_entered" from="ExitDetection" to="." method="_on_ExitDetection_body_entered"]
