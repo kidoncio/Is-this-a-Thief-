@@ -8,6 +8,7 @@ var destinations: Node2D
 const NPC_GROUP: String = "NPC"
 const INTERFACE_GROUP: String = "interface"
 const LABELS_GROUP: String = "labels"
+const SUSPICION_METER_GROUP: String = "SuspicionMeter"
 
 # Volume
 var VOLUME_VISION_SFX: float = -20.0
@@ -15,6 +16,7 @@ var VOLUME_VISION_SFX: float = -20.0
 # Methods
 const DARK_VISION_MODE_METHOD: String = "dark_vision_mode"
 const NIGHT_VISION_MODE_METHOD: String = "night_vision_mode"
+const PLAYER_SEEN_METHOD: String = "player_seen"
 
 # Assets Path - !important
 const nightvision_on_sfx: String = "res://SFX/nightvision.wav"

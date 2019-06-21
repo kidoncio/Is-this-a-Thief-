@@ -16,6 +16,7 @@ func _process(delta):
 		$Torch.enabled = false
 	
 	if Player_is_in_FOV_TOLERANCE() && Player_is_in_LOS():
+		get_tree().call_group(Global.SUSPICION_METER_GROUP, Global.PLAYER_SEEN_METHOD)
 		$Torch.color = COLOR_RED
 		
 		if Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD:
