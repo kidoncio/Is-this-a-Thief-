@@ -12,6 +12,7 @@ cull_mode = 1
 polygon = PoolVector2Array( -11.9748, -8.88934, -9.88136, -18.31, -6.21775, -22.6017, 1.00478, -23.0204, 6.2385, -18.4147, 8.12264, -9.62206, 9.48341, -0.724737, 7.38992, 11.2081, 3.41229, 19.4774, -7.57852, 19.0587, -11.3468, 13.6157, -11.6608, 5.2417 )
 
 [node name="Character" type="KinematicBody2D"]
+collision_mask = 19
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

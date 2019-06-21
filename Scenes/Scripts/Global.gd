@@ -26,6 +26,8 @@ const nightvision_off_sfx: String = "res://SFX/nightvision_off.wav"
 const RED_LIGHT: String = "res://GFX/Interface/PNG/dotRed.png"
 const BLUE_LIGHT: String = "res://GFX/Interface/PNG/dotBlue.png"
 const GREEN_LIGHT: String = "res://GFX/Interface/PNG/dotGreen.png"
+const PLAYER_SPRITE: String = "res://GFX/PNG/Hitman 1/hitman1_stand.png"
+const SOLDIER_SPRITE: String = "res://GFX/PNG/Soldier 1/soldier1_stand.png"
 
 # SFXs
 const LOCKED_DOOR_CORRECT: String = "res://SFX/threeTone1.ogg"

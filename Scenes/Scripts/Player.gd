@@ -1,14 +1,16 @@
 extends "res://Scenes/Scripts/Character.gd"
 
 var motion: Vector2 = Vector2()
+
 var night_vision: bool = false
 var vision_change_on_cooldown: bool = false
-
 var vision_mode = Global.DARK_VISION_MODE_METHOD
+
+var disguised: bool = false
 
 func _ready():
 	Global.Player = self
-
+	collision_layer = 1
 
 func _process(delta):
 	update_motion(delta)
@@ -34,19 +36,50 @@ func update_motion(delta: float) -> void:
 
 
 func _input(event) -> void:
+	# Vision Mode Input
 	if !vision_change_on_cooldown && Input.is_action_just_pressed("ui_select"):
-		vision_change_on_cooldown = true
 		cycle_vision_mode()
-		$VisionModeTimer.start()
+		
+	
+	# Disguise Input
+	if Input.is_action_just_pressed("toggle_disguise"):
+		toggle_disguise()
 
 
 func cycle_vision_mode():
+	vision_change_on_cooldown = true
+	
 	if vision_mode == Global.DARK_VISION_MODE_METHOD:
 		get_tree().call_group(Global.INTERFACE_GROUP, Global.NIGHT_VISION_MODE_METHOD)
 		vision_mode = Global.NIGHT_VISION_MODE_METHOD
 	elif vision_mode == Global.NIGHT_VISION_MODE_METHOD:
 		get_tree().call_group(Global.INTERFACE_GROUP, Global.DARK_VISION_MODE_METHOD)
 		vision_mode = Global.DARK_VISION_MODE_METHOD
+	
+	$VisionModeTimer.start()
 
 func _on_VisionModeTimer_timeout():
 	vision_change_on_cooldown = false
+
+
+func toggle_disguise() -> void:
+	if disguised:
+		reveal()
+	else:
+		disguise()
+
+
+func reveal() -> void:
+	$Sprite.texture = load(Global.PLAYER_SPRITE)
+	$Light2D.texture = load(Global.PLAYER_SPRITE)
+	collision_layer = 1
+	
+	disguised = false
+
+
+func disguise() -> void:
+	$Sprite.texture = load(Global.SOLDIER_SPRITE)
+	$Light2D.texture = load(Global.SOLDIER_SPRITE)
+	collision_layer = 16
+	
+	disguised = true
