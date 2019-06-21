@@ -20,11 +20,13 @@ func _ready():
 	collision_layer = Global.PLAYER_LAYER
 	$DisguiseTimer.wait_time = disguise_duration
 	reveal()
+	disguise_display_update()
+
 
 func _process(delta):
 	update_motion(delta)
 	move_and_slide(motion * velocity_multiplier)
-	update_disguise_gui()
+	disguise_label_update()
 
 
 func update_motion(delta: float) -> void:
@@ -98,16 +100,11 @@ func disguise() -> void:
 	velocity_multiplier = disguise_slowdown
 	
 	disguises -= 1
-	update_disguise_gui()
+	disguise_display_update()
 	
 	disguised = true
 	
 	$DisguiseTimer.start()
-
-
-func update_disguise_gui() -> void:
-	disguise_display_update()
-	disguise_label_update()
 
 
 func disguise_label_update() -> void:
