@@ -6,14 +6,17 @@ var night_vision: bool = false
 var vision_change_on_cooldown: bool = false
 var vision_mode = Global.DARK_VISION_MODE_METHOD
 
+export var night_visions: int = 3 # How many night visions you start with
+export var night_vision_duration: int = 10 # How long a night vision can last (in seconds)
+
 var disguised: bool = false
+
+export var disguises: int = 3 # How many disguises you start with
+export var disguise_duration: int = 5 # How long a disguise can last (in seconds)
+export var disguise_slowdown: float = 0.5
 
 const DEFAULT_VELOCITY_MULTIPLIER: float = 1.0
 var velocity_multiplier: float = 1
-
-export var disguises: int = 3 # How many disguises you start with
-export var disguise_duration: int = 5 # How long a disguise can last
-export var disguise_slowdown: float = 0.5
 
 func _ready():
 	Global.Player = self

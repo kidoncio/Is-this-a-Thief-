@@ -1,0 +1,173 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Scripts/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://Tilesets/FloorTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/VisionMode.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Suitcase.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Lightmaps/torchmap.png" type="Texture" id=10]
+[ext_resource path="res://Lightmaps/radial.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Interface/PNG/crossair_blueOutline.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://SFX/message.wav" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Music.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/TutorialGUI.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43.8923, 31.4139 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.4742, 32.2373 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 52.0851, 30.8073 )
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Floors" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 14, 11, 0, 15, 11, 0, 16, 11, 0, 17, 11, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65551, 11, 0, 65552, 11, 0, 65553, 11, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 11, 0, 131087, 11, 0, 131089, 11, 0, 131090, 11, 0, 131091, 11, 0, 131092, 11, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 196615, 6, 0, 196622, 11, 0, 196623, 11, 0, 196628, 11, 0, 196629, 11, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262153, 11, 0, 262154, 11, 0, 262155, 11, 0, 262156, 11, 0, 262157, 11, 0, 262158, 11, 0, 262159, 11, 0, 262160, 11, 0, 262161, 11, 0, 262162, 11, 0, 262164, 11, 0, 262165, 11, 0, 327689, 11, 0, 327690, 11, 0, 327691, 11, 0, 327692, 11, 0, 327693, 11, 0, 327694, 11, 0, 327695, 11, 0, 327696, 11, 0, 327697, 11, 0, 327698, 11, 0, 327700, 11, 0, 327701, 11, 0, 393225, 11, 0, 393226, 11, 0, 393227, 11, 0, 393228, 11, 0, 393229, 11, 0, 393230, 11, 0, 393231, 11, 0, 393232, 11, 0, 393233, 11, 0, 393234, 11, 0, 393235, 11, 0, 393236, 11, 0, 458765, 11, 0, 458770, 11, 0, 458771, 11, 0, 524297, 15, 0, 524298, 15, 0, 524299, 15, 0, 524300, 15, 0, 524301, 15, 0, 524302, 15, 0, 524303, 15, 0, 524304, 15, 0, 524305, 15, 0, 524306, 15, 0, 524307, 15, 0, 524308, 15, 0, 589833, 15, 0, 589834, 15, 0, 589835, 15, 0, 589836, 15, 0, 589837, 15, 0, 589838, 15, 0, 589839, 15, 0, 589840, 15, 0, 589841, 15, 0, 589842, 15, 0, 589843, 15, 0, 589844, 15, 0, 655369, 15, 0, 655370, 15, 0, 655371, 15, 0, 655372, 15, 0, 655373, 15, 0, 655374, 15, 0, 655375, 15, 0, 655376, 15, 0, 655377, 15, 0, 655378, 15, 0, 655379, 15, 0, 655380, 15, 0, 720905, 15, 0, 720906, 15, 0, 720907, 15, 0, 720908, 15, 0, 720909, 15, 0, 720910, 15, 0, 720911, 15, 0, 720912, 15, 0, 720913, 15, 0, 720914, 15, 0, 720915, 15, 0, 720916, 15, 0, 786441, 15, 0, 786442, 15, 0, 786443, 15, 0, 786444, 15, 0, 786445, 15, 0, 786446, 15, 0, 786447, 15, 0, 786448, 15, 0, 786449, 15, 0, 786450, 15, 0, 786451, 15, 0, 786452, 15, 0, 851985, 15, 0, 851986, 15, 0, 851987, 15, 0, 851988, 15, 0 )
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -65536, 0, 262144, -65535, 0, 262146, -65534, 0, 262146, -65533, 0, 262146, -65532, 0, 262146, -65531, 0, 262146, -65530, 0, 262146, -65529, 0, 262146, -65528, 0, 524292, -65527, 0, 458756, -65526, 0, 458756, -65525, 0, 458756, -65524, 0, 458756, -65523, 0, 458756, -65522, 0, 524293, -65521, 0, 262146, -65520, 0, 262146, -65519, 0, 262146, -65518, 0, 262145, 0, 0, 327682, 8, 0, 393220, 9, 0, 393222, 10, 0, 393222, 11, 0, 393222, 12, 0, 393222, 13, 0, 393222, 14, 0, 393221, 18, 0, 327682, 65536, 0, 327682, 65544, 0, 327687, 65545, 0, 458757, 65546, 0, 458757, 65547, 0, 458757, 65548, 0, 458757, 65549, 0, 458757, 65550, 0, 327688, 65552, 0, 327685, 65554, 0, 327680, 65555, 0, 262146, 65556, 0, 262146, 65557, 0, 262145, 131072, 0, 327682, 131088, 0, 327682, 131093, 0, 327682, 196608, 0, 327682, 196616, 0, 262144, 196617, 0, 262146, 196618, 0, 262146, 196619, 0, 262146, 196620, 0, 262146, 196621, 0, 262146, 196622, 0, 262146, 196623, 0, 262146, 196624, 0, 262148, 196625, 0, 262146, 196626, 0, 262146, 196627, 0, 262145, 196629, 0, 327682, 262144, 0, 327682, 262152, 0, 327682, 262163, 0, 327682, 262165, 0, 327682, 327680, 0, 327680, 327681, 0, 262146, 327682, 0, 262146, 327683, 0, 262146, 327684, 0, 262146, 327685, 0, 262146, 327686, 0, 262146, 327687, 0, 262146, 327688, 0, 327684, 327699, 0, 262150, 327701, 0, 327682, 393224, 0, 327682, 393237, 0, 327682, 458760, 0, 327683, 458761, 0, 262146, 458762, 0, 262146, 458763, 0, 262146, 458764, 0, 262149, 458766, 0, 327686, 458767, 0, 262146, 458768, 0, 262146, 458769, 0, 262146, 458770, 0, 262146, 458771, 0, 262146, 458772, 0, 262146, 458773, 0, 327684, 524296, 0, 327682, 524309, 0, 327682, 589832, 0, 327682, 589845, 0, 327682, 655368, 0, 327682, 655381, 0, 327682, 720904, 0, 327682, 720917, 0, 327682, 786440, 0, 327682, 786453, 0, 327682, 851976, 0, 327680, 851977, 0, 262146, 851978, 0, 262146, 851979, 0, 262146, 851980, 0, 262146, 851981, 0, 262146, 851982, 0, 262146, 851983, 0, 262146, 851984, 0, 262146, 851985, 0, 262146, 851986, 0, 262146, 851987, 0, 262146, 851988, 0, 262146, 851989, 0, 327681 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 186.158, 263.485 )
+
+[node name="VisionMode" parent="." instance=ExtResource( 5 )]
+color = Color( 0.0388794, 0.0683594, 0.203125, 1 )
+
+[node name="Exit" parent="." instance=ExtResource( 6 )]
+margin_left = 839.713
+margin_top = 764.617
+margin_right = 903.713
+margin_bottom = 828.617
+
+[node name="Suitcase" parent="." instance=ExtResource( 7 )]
+position = Vector2( 650.688, 298.137 )
+rotation = 1.5708
+
+[node name="Cameras" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="SecurityCamera" parent="Cameras" instance=ExtResource( 8 )]
+position = Vector2( 784.835, 521.395 )
+rotation = 1.5708
+
+[node name="SecurityCamera2" parent="Cameras" instance=ExtResource( 8 )]
+position = Vector2( 1064.03, 822.243 )
+rotation = -1.5708
+
+[node name="Doors" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Door" parent="Doors" instance=ExtResource( 9 )]
+position = Vector2( 864.811, 159.662 )
+rotation = 1.5708
+
+[node name="Door2" parent="Doors" instance=ExtResource( 9 )]
+position = Vector2( 862.758, 478.642 )
+
+[node name="Lights" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Light2D2" type="Light2D" parent="Lights"]
+position = Vector2( 752.86, 128.873 )
+rotation = 0.313137
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 10 )
+offset = Vector2( 320, 0 )
+shadow_enabled = true
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+position = Vector2( 330.392, 96.1014 )
+texture = ExtResource( 11 )
+shadow_enabled = true
+
+[node name="ObjectiveAreas" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="ObjectiveDoor" type="Area2D" parent="ObjectiveAreas"]
+editor/display_folded = true
+position = Vector2( 864.336, 159.963 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveAreas/ObjectiveDoor"]
+position = Vector2( 67.9968, -0.210266 )
+shape = SubResource( 2 )
+
+[node name="ObjectiveMove" type="Area2D" parent="ObjectiveAreas"]
+editor/display_folded = true
+position = Vector2( 594.887, 170.968 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveAreas/ObjectiveMove"]
+position = Vector2( -10.9986, -10.5409 )
+shape = SubResource( 1 )
+
+[node name="ObjectiveNightVision" type="Area2D" parent="ObjectiveAreas"]
+editor/display_folded = true
+position = Vector2( 873.659, 416.095 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveAreas/ObjectiveNightVision"]
+shape = SubResource( 3 )
+
+[node name="ObjectiveMarkers" type="Node2D" parent="."]
+
+[node name="MoveObjective" type="Position2D" parent="ObjectiveMarkers"]
+position = Vector2( 569.709, 159.243 )
+
+[node name="DoorObjective" type="Position2D" parent="ObjectiveMarkers"]
+position = Vector2( 863.465, 159.182 )
+
+[node name="LootObjective" type="Position2D" parent="ObjectiveMarkers"]
+position = Vector2( 617.14, 297.889 )
+
+[node name="NightVisionObjective" type="Position2D" parent="ObjectiveMarkers"]
+position = Vector2( 879.413, 424.953 )
+
+[node name="ExitObjective" type="Position2D" parent="ObjectiveMarkers"]
+position = Vector2( 874.526, 803.701 )
+
+[node name="ObjectivePointer" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 767.302, 181.191 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="ObjectivePointer"]
+texture = ExtResource( 12 )
+energy = 0.9
+
+[node name="GUI" parent="." instance=ExtResource( 13 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="BGM" parent="." instance=ExtResource( 15 )]
+
+[node name="TutorialGUI" parent="." instance=ExtResource( 16 )]
+[connection signal="body_entered" from="Suitcase" to="." method="_on_Suitcase_body_entered"]
+[connection signal="body_entered" from="ObjectiveAreas/ObjectiveDoor" to="." method="_on_ObjectiveDoor_body_entered"]
+[connection signal="body_entered" from="ObjectiveAreas/ObjectiveMove" to="." method="_on_ObjectiveMove_body_entered"]
+[connection signal="body_entered" from="ObjectiveAreas/ObjectiveNightVision" to="." method="_on_ObjectiveNightVision_body_entered"]
