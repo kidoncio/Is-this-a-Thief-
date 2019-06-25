@@ -120,6 +120,8 @@ func disguise_display_update() -> void:
 
 
 func collect_suitcase() -> void:
+	get_tree().call_group(Global.INTERFACE_GROUP, Global.COLLECT_LOOT_METHOD)
+	
 	var loot = Node.new()
 	loot.set_name(Global.SUITCASE_NODE)
 	add_child(loot)

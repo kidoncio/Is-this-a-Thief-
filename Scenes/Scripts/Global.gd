@@ -39,6 +39,9 @@ const FOLDER_SPRITE_ICON: String = "res://GFX/Loot/folder.png"
 const SUITCASE_SPRITE_ICON: String = "res://GFX/Loot/suitcase.png"
 const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png"
 
+# Scenes
+const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
+
 # SFXs
 const LOCKED_DOOR_CORRECT: String = "res://SFX/threeTone1.ogg"
 const LOCKED_DOOR_BUTTON_PRESSED: String = "res://SFX/twoTone1.ogg"

@@ -14,7 +14,7 @@ func player_seen() -> void:
 
 
 func end_game() -> void:
-	get_tree().quit()
+	get_tree().change_scene(Global.GAME_OVER_SCENE)
 
 
 func update_suspicion() -> void:
