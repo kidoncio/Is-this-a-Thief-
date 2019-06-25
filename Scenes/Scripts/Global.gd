@@ -40,6 +40,7 @@ const SUITCASE_SPRITE_ICON: String = "res://GFX/Loot/suitcase.png"
 const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png"
 
 # Scenes
+const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
 const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
 
 # SFXs

@@ -42,7 +42,7 @@ margin_bottom = -20.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="GameOverLabel" type="Label" parent="CenterContainer/NinePatchRect/VBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/NinePatchRect/VBoxContainer"]
 margin_top = 24.0
 margin_right = 260.0
 margin_bottom = 56.0
