@@ -4,6 +4,10 @@ var Player: KinematicBody2D
 var navigation: Navigation2D
 var destinations: Node2D
 
+# Node names
+const FOLDER_NODE: String = "Folder"
+const SUITCASE_NODE: String = "Suitcase"
+
 # Groups
 const NPC_GROUP: String = "NPC"
 const LABELS_GROUP: String = "labels"

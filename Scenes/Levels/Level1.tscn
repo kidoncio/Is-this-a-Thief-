@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Scripts/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scripts/Destinations.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://SFX/Music/StealthintheWoods.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Suitcase.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=17]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 1578.47, 578.706, 1583.91, 652.166, 1583.78, 767.747, 1504.36, 708.182, 1492.62, 594.467, 1496.23, 503.315, 1174.04, 761.429, 1239.92, 709.987, 1173.56, 576.726, 1241.73, 506.022, 806.463, 498.51, 747.015, 498.51, 700.49, 322.749, 687.566, 210.314, 841.357, 221.946, 890.342, 225.901, 1008, 336, 1008.52, 571.371, 1015.13, 702.217, 809.048, 684.609, 1415.91, 451.872, 1590.18, 449.134, 1583.91, 518.85, 713.012, 120.025, 719.628, -10.8214, 1010.72, 19.3173, 840.183, 120.025, 1015.87, 120.025, 892.374, 128.846, 1978.45, 185.989, 1756.38, 184.441, 1758.7, 130.277, 1806.04, 55.8641, 1894.9, 56.2153, 2003.93, 57.7549, 1156.67, 402.932, 1288.93, 283.407, 1341.28, 266.259, 1421.6, 266.259, 1104, 528, 2171.58, 355.863, 2173.47, 444.097, 1741.12, 440.946, 1898.05, 379.182, 1889.86, -120.606, 1995.74, -122.496, 1008.7, 226.145, 2160, 528, 2160, 624, 1824, 624, 1684.98, 571.551, 2080.19, 55.2339, 2082.09, -117.454, 2163.39, -117.454, 2170.95, 50.1919, 2124.7, 184.441, 1743.01, 376.661, 1945.95, 330.653, 2048.05, 315.527, 2118.01, 266.997, 1291.54, 182.404, 1177.03, 178.717, 1172.51, 102.005, 1322.33, 89.3696, 1378.17, 181.478, 1336.47, 183.331, 1688.3, 628.06, 1631.52, 566.494, 1681.43, 70.0469, 1683.14, -68.9251, 1783.98, -70.8159, 1677.24, 122.137, 1581.44, 68.8494, 1594.01, 120.939, 1514.96, 64.377, 1590.45, 178.861, 1435.14, 78.5396, 1058.5, 567.695, 1008, 528 )
@@ -113,7 +115,6 @@ collision_mask = 29
 format = 1
 
 [node name="Computers" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 981.025, 63.8152 )
 
 [node name="Computer" parent="Computers" instance=ExtResource( 7 )]
@@ -190,5 +191,15 @@ autoplay = true
 
 [node name="WallsAndFurnitures" type="Node" parent="."]
 editor/display_folded = true
-[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
+
+[node name="Suitcase" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1784.51, 295.416 )
+rotation = 3.14159
+
+[node name="Exit" parent="." instance=ExtResource( 17 )]
+margin_left = 256.63
+margin_top = 220.245
+margin_right = 320.63
+margin_bottom = 284.245
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
