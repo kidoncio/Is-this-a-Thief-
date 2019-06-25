@@ -19,9 +19,10 @@ const DISGUISE_DISPLAY_GROUP: String = "DisguiseDisplay"
 var VOLUME_VISION_SFX: float = -20.0
 
 # Methods
+const PLAYER_SEEN_METHOD: String = "player_seen"
+const COLLECT_LOOT_METHOD: String = "collect_loot"
 const DARK_VISION_MODE_METHOD: String = "dark_vision_mode"
 const NIGHT_VISION_MODE_METHOD: String = "night_vision_mode"
-const PLAYER_SEEN_METHOD: String = "player_seen"
 const UPDATE_DISGUISE_DISPLAY_METHOD: String = "update_disguise_display"
 
 # Assets Path - !important
@@ -34,6 +35,8 @@ const BLUE_LIGHT: String = "res://GFX/Interface/PNG/dotBlue.png"
 const GREEN_LIGHT: String = "res://GFX/Interface/PNG/dotGreen.png"
 const PLAYER_SPRITE: String = "res://GFX/PNG/Hitman 1/hitman1_stand.png"
 const SOLDIER_SPRITE: String = "res://GFX/PNG/Soldier 1/soldier1_stand.png"
+const FOLDER_SPRITE_ICON: String = "res://GFX/Loot/folder.png"
+const SUITCASE_SPRITE_ICON: String = "res://GFX/Loot/suitcase.png"
 const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png"
 
 # SFXs
