@@ -4,57 +4,58 @@
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_green.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_blue.png" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=4]
 size = 14
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="DynamicFontData" id=13]
-font_path = "res://GFX/Interface/Fonts/kenvector_future_thin.ttf"
-
-[sub_resource type="DynamicFont" id=14]
-size = 14
-use_mipmaps = true
-use_filter = true
-font_data = SubResource( 13 )
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="DynamicFontData" id=6]
-font_path = "res://GFX/Interface/Fonts/kenvector_future.ttf"
+font_path = "res://GFX/Interface/Fonts/kenvector_future_thin.ttf"
 
 [sub_resource type="DynamicFont" id=7]
-size = 30
+size = 14
 use_mipmaps = true
 use_filter = true
 font_data = SubResource( 6 )
 
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://GFX/Interface/Fonts/kenvector_future.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 8 )
+
 [resource]
-default_font = SubResource( 7 )
+default_font = SubResource( 9 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 8 )
+Button/fonts/font = SubResource( 1 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 9 )
-Button/styles/normal = SubResource( 10 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = null
 ItemList/colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
@@ -63,8 +64,8 @@ ItemList/constants/hseparation = 4
 ItemList/constants/icon_margin = 4
 ItemList/constants/line_separation = 2
 ItemList/constants/vseparation = 2
-ItemList/fonts/font = SubResource( 11 )
-ItemList/styles/bg = SubResource( 12 )
+ItemList/fonts/font = SubResource( 4 )
+ItemList/styles/bg = SubResource( 5 )
 ItemList/styles/bg_focus = null
 ItemList/styles/cursor = null
 ItemList/styles/cursor_unfocused = null
@@ -76,7 +77,7 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 14 )
+Label/fonts/font = SubResource( 7 )
 Label/styles/normal = null
 RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
