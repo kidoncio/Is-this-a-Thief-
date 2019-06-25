@@ -92,6 +92,9 @@ func reveal() -> void:
 
 
 func disguise() -> void:
+	if $DisguiseLabel.visible:
+		return
+	
 	$DisguiseLabel.visible = true
 	$Sprite.texture = load(Global.SOLDIER_SPRITE)
 	$Light2D.texture = load(Global.SOLDIER_SPRITE)
