@@ -37,6 +37,7 @@ margin_left = 0.428467
 margin_top = -0.167847
 margin_right = -0.339539
 margin_bottom = 0.632141
+rect_min_size = Vector2( 160, 45 )
 texture = ExtResource( 1 )
 patch_margin_left = 12
 patch_margin_top = 12
@@ -75,12 +76,13 @@ script = ExtResource( 4 )
 [node name="DisguiseContainer" type="NinePatchRect" parent="."]
 anchor_left = 0.034
 anchor_top = 0.052
-anchor_right = 0.228
-anchor_bottom = 0.183
+anchor_right = 0.191
+anchor_bottom = 0.158
 margin_left = -0.816002
 margin_top = -0.200001
-margin_right = -0.472015
-margin_bottom = 0.199989
+margin_right = 1.41599
+margin_bottom = 0.199997
+rect_min_size = Vector2( 140, 65 )
 theme = ExtResource( 5 )
 texture = ExtResource( 6 )
 patch_margin_left = 12
@@ -97,7 +99,7 @@ margin_right = -10.0
 margin_bottom = -10.0
 
 [node name="DisguisesLabel" type="Label" parent="DisguiseContainer/VBoxContainer"]
-margin_right = 178.0
+margin_right = 143.0
 margin_bottom = 17.0
 theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 4 )
@@ -107,14 +109,13 @@ text = "Disguises"
 "DisguiseDisplay",
 ]]
 margin_top = 21.0
-margin_right = 178.0
-margin_bottom = 58.0
+margin_right = 143.0
+margin_bottom = 45.0
 mouse_filter = 2
 size_flags_vertical = 3
 auto_height = true
 max_columns = 7
 same_column_width = true
 fixed_column_width = 32
-icon_mode = 0
 fixed_icon_size = Vector2( 32, 32 )
 script = ExtResource( 8 )
