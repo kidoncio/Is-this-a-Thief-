@@ -105,7 +105,7 @@ margin_right = -0.0570068
 margin_bottom = 0.00999832
 
 [node name="DisguisesLabel" type="Label" parent="DisguiseContainer/VBoxContainer"]
-margin_right = 142.0
+margin_right = 143.0
 margin_bottom = 17.0
 theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 4 )
@@ -115,7 +115,7 @@ text = "Disguises"
 "DisguiseDisplay",
 ]]
 margin_top = 21.0
-margin_right = 142.0
+margin_right = 143.0
 margin_bottom = 45.0
 mouse_filter = 2
 size_flags_vertical = 3
@@ -159,8 +159,8 @@ custom_fonts/font = SubResource( 4 )
 text = "Night vision"
 
 [node name="NightVisionDisplay" type="ItemList" parent="NightVisionContainer/VBoxContainer" groups=[
-"DisguiseDisplay",
 "NightVisionDisplay",
+"DisguiseDisplay",
 ]]
 margin_top = 21.0
 margin_right = 142.0

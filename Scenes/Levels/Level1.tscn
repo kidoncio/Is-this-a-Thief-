@@ -199,5 +199,5 @@ margin_left = 256.63
 margin_top = 220.245
 margin_right = 320.63
 margin_bottom = 284.245
-[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]

@@ -3,6 +3,8 @@ extends Node2D
 var text
 
 func _ready():
+	add_to_group(Global.INTERFACE_GROUP)
+	
 	text = get_json()
 	update_pointer_position(0, false)
 	$TutorialGUI/Popup.show()
@@ -48,7 +50,18 @@ func _on_ObjectiveDoor_body_entered(body):
 
 func _on_ObjectiveNightVision_body_entered(body):
 	update_pointer_position(4)
+	DarkVision_mode()
 
 
 func _on_Suitcase_body_entered(body):
 	update_pointer_position(3)
+
+
+func NightVision_mode() -> void:
+	$GUI.visible = false
+	$TutorialGUI/Popup.hide()
+
+
+func DarkVision_mode() -> void:
+	$GUI.visible = true
+	$TutorialGUI/Popup.show()
