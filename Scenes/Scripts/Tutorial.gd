@@ -1,8 +1,21 @@
 extends Node2D
 
+var text
+
 func _ready():
+	text = get_json()
 	update_pointer_position(0, false)
 	$TutorialGUI/Popup.show()
+
+
+func get_json():
+	var file = File.new()
+	file.open(Global.TUTORIAL_MESSAGES_JSON, file.READ)
+	
+	var content = file.get_as_text()
+	file.close()
+	
+	return parse_json(content)
 
 
 func update_pointer_position(number: int, play_sfx: bool = true) -> void:
@@ -15,6 +28,8 @@ func update_pointer_position(number: int, play_sfx: bool = true) -> void:
 	
 	$Tween.interpolate_property(pointer, "position", pointer.position, marker.position, 0.5, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	$Tween.start()
+	
+	$TutorialGUI/Popup/Label.text = text[str(number)]
 	
 	if play_sfx && pointer.position != marker.position:
 		play_sfx()
@@ -32,8 +47,8 @@ func _on_ObjectiveDoor_body_entered(body):
 
 
 func _on_ObjectiveNightVision_body_entered(body):
-	update_pointer_position(3)
+	update_pointer_position(4)
 
 
 func _on_Suitcase_body_entered(body):
-	update_pointer_position(4)
+	update_pointer_position(3)
