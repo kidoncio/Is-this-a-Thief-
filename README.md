@@ -2,6 +2,20 @@
 
 A thief game made with Godot
 
+
+------------
+
+### Controls
+**W A S D** - Movement
+
+**Left click** - Interact
+
+**Space** - Toggle night vision
+
+**E** - Toggle disguise
+
+------------
+
 #### Resources of the game
 
 ##### Textures
