@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="Is this a Thief?"
 run/main_scene="res://Scenes/SplashScreen.tscn"
 boot_splash/image="res://GFX/PNG/burglar.png"
+boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.117647, 0.117647, 0.117647, 1 )
 config/icon="res://GFX/PNG/burglar.png"
 
@@ -71,5 +72,6 @@ toggle_disguise={
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
 environment/default_clear_color=Color( 0.00784314, 0.00784314, 0.00784314, 1 )
 environment/default_environment="res://default_env.tres"
