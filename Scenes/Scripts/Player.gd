@@ -149,6 +149,8 @@ func collect_suitcase() -> void:
 
 
 func change_to_night_vision() -> void:
+	velocity_multiplier = disguise_slowdown
+	
 	night_visions -= 1
 	night_vision_display_update()
 	
@@ -164,6 +166,8 @@ func change_to_night_vision() -> void:
 
 
 func change_to_dark_vision() -> void:
+	velocity_multiplier = DEFAULT_VELOCITY_MULTIPLIER
+	
 	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionLabel.visible = false
 	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionSprite.visible = false
 	
