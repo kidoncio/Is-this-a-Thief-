@@ -14,7 +14,7 @@ cull_mode = 1
 polygon = PoolVector2Array( -29.3346, -12.4458, 34.3371, -12.6348, 34.4316, 3.42486, -29.4291, 3.80274 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32.3194, 46.8873 )
+extents = Vector2( 36.0343, 48.208 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "close"
