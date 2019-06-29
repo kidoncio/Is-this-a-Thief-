@@ -40,8 +40,11 @@ func move() -> void:
 
 func navigate() -> void:
 	if Player_is_detected():
-		chase_the_Player()
-		return
+		yield(get_tree().create_timer(0.3), "timeout")
+		
+		if Player_is_detected():
+			chase_the_Player()
+			return
 	
 	var distance_to_destination: float = position.distance_to(path[0])
 	destination = path[0]
