@@ -15,7 +15,7 @@ func _process(delta):
 	if Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD:
 		$Torch.enabled = false
 	
-	if Player_is_in_FOV_TOLERANCE() && Player_is_in_LOS():
+	if Player_is_detected():
 		get_tree().call_group(Global.SUSPICION_METER_GROUP, Global.PLAYER_SEEN_METHOD)
 		$Torch.color = COLOR_RED
 		
@@ -60,3 +60,7 @@ func night_vision_mode() -> void:
 
 func dark_vision_mode() -> void:
 	$Torch.enabled = false
+
+
+func Player_is_detected() -> bool:
+	return Player_is_in_FOV_TOLERANCE() && Player_is_in_LOS()

@@ -39,6 +39,10 @@ func move() -> void:
 
 
 func navigate() -> void:
+	if Player_is_detected():
+		chase_the_Player()
+		return
+	
 	var distance_to_destination: float = position.distance_to(path[0])
 	destination = path[0]
 	
@@ -68,3 +72,11 @@ func update_path() -> void:
 
 func _on_Timer_timeout() -> void:
 	make_path()
+
+
+func chase_the_Player() -> void:
+	motion = (Global.Player.position - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
+	
+	look_at(Global.Player.position)
+	
+	move_and_slide(motion)
