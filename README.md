@@ -2,6 +2,8 @@
 
 A thief game made with Godot
 
+The game can be found on [Itch.io](https://kidoncio.itch.io/is-this-a-thief "Itch.io").
+
 
 ------------
 
