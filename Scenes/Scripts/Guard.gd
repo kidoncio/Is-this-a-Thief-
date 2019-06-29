@@ -5,7 +5,7 @@ var possible_destinations: Array = []
 var path: Array = []
 var destination: Vector2 = Vector2()
 
-export var WALK_SLOWDOWN: float = 0.4
+export var WALK_SLOWDOWN: float = 0.35
 export var NAV_STOP_THRESHOLD: int = 5 # pixels
 
 onready var navigation: Navigation2D = Global.navigation
