@@ -16,7 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Is this a burglar?"
-run/main_scene="res://Scenes/Levels/Level1.tscn"
+run/main_scene="res://Scenes/SplashScreen.tscn"
+boot_splash/image="res://GFX/PNG/burglar.png"
 config/icon="res://GFX/PNG/burglar.png"
 
 [autoload]
