@@ -5,7 +5,7 @@ var possible_destinations: Array = []
 var path: Array = []
 var destination: Vector2 = Vector2()
 
-export var WALK_SLOWDOWN: float = 0.5
+export var WALK_SLOWDOWN: float = 0.4
 export var NAV_STOP_THRESHOLD: int = 5 # pixels
 
 onready var navigation: Navigation2D = Global.navigation
@@ -28,7 +28,10 @@ func move() -> void:
 	motion = (destination - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
 	
 	if is_on_wall():
-		make_path()
+		yield(get_tree().create_timer(1.0), "timeout")
+		
+		if is_on_wall():
+			make_path()
 	
 	look_at(destination)
 	
