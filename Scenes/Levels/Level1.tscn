@@ -114,7 +114,6 @@ collision_mask = 29
 format = 1
 
 [node name="Computers" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 981.025, 63.8152 )
 
 [node name="Computer" parent="Computers" instance=ExtResource( 7 )]
@@ -185,8 +184,10 @@ collision_mask = 1
 [node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
 
 [node name="KeyBoardInfo" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="KeyBoardInfo"]
+editor/display_folded = true
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -300.0

@@ -39,6 +39,14 @@ color = Color( 0.0823529, 0.619608, 0.917647, 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ComputerPopup" parent="CanvasLayer" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -240.0
+margin_right = 300.0
+margin_bottom = 240.0
 
 [node name="Label" type="Label" parent="." groups=[
 "labels",

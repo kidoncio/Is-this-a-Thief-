@@ -25,6 +25,8 @@ anchor_right = 0.293
 anchor_bottom = 0.667
 margin_right = -0.0320129
 margin_bottom = -0.200043
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 

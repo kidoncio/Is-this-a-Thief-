@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[node name="TutorialGui" type="CanvasLayer"]
+[node name="TutorialGUI" type="CanvasLayer"]
 
 [node name="Popup" type="Control" parent="."]
 anchor_left = 0.5
