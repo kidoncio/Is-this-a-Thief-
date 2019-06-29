@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Is this a burglar?"
+config/name="Is this a Thief?"
 run/main_scene="res://Scenes/SplashScreen.tscn"
 boot_splash/image="res://GFX/PNG/burglar.png"
 boot_splash/bg_color=Color( 0.117647, 0.117647, 0.117647, 1 )
