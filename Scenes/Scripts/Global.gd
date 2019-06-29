@@ -10,6 +10,7 @@ const SUITCASE_NODE: String = "Suitcase"
 
 # Groups
 const NPC_GROUP: String = "NPC"
+const MENU_GROUP: String = "Menu"
 const LABELS_GROUP: String = "labels"
 const INTERFACE_GROUP: String = "interface"
 const SUSPICION_METER_GROUP: String = "SuspicionMeter"
@@ -20,6 +21,7 @@ const NIGHT_VISION_DISPLAY_GROUP: String = "NightVisionDisplay"
 var VOLUME_VISION_SFX: float = -20.0
 
 # Methods
+const MENU_SHOW_METHOD: String = "menu_show"
 const PLAYER_SEEN_METHOD: String = "player_seen"
 const COLLECT_LOOT_METHOD: String = "collect_loot"
 const DARK_VISION_MODE_METHOD: String = "dark_vision_mode"
@@ -43,6 +45,7 @@ const SUITCASE_SPRITE_ICON: String = "res://GFX/Loot/suitcase.png"
 const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png"
 
 # File JSONs - MUST BE CHANGED MANUALLY
+const CONFIGURATION_JSON: String = "res://Configuration/Configuration.json"
 const TUTORIAL_MESSAGES_JSON: String = "res://Scenes/Levels/TutorialMessages.json"
 
 # Scenes

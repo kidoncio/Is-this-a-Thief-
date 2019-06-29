@@ -25,6 +25,7 @@ config/icon="res://GFX/PNG/burglar.png"
 [autoload]
 
 Global="*res://Scenes/Scripts/Global.gd"
+Configuration="*res://Scenes/Scripts/Configuration.gd"
 
 [input]
 

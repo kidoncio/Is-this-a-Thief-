@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://GFX/Interface/PNG/glassPanel_cornerTL.png" type="Texture" id=1]
 [ext_resource path="res://GFX/Interface/PNG/dot_shadow.png" type="Texture" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Scenes/Scripts/NightVisionDisplay.gd" type="Script" id=9]
 [ext_resource path="res://GFX/Interface/PNG/glassPanel_cornerTR.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Scripts/LootContainer.gd" type="Script" id=11]
+[ext_resource path="res://GFX/Interface/PNG/glassPanel.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Interface/PNG/menu.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Menu.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://GFX/Interface/Fonts/kenvector_future_thin.ttf"
@@ -79,12 +82,13 @@ fill_mode = 5
 script = ExtResource( 4 )
 
 [node name="DisguiseContainer" type="NinePatchRect" parent="."]
+editor/display_folded = true
 anchor_right = 0.052
-anchor_bottom = 0.052
+anchor_bottom = 0.039
 margin_left = 34.0
 margin_top = 31.0
 margin_right = 143.752
-margin_bottom = 63.8
+margin_bottom = 71.6
 rect_min_size = Vector2( 140, 65 )
 theme = ExtResource( 5 )
 texture = ExtResource( 6 )
@@ -94,6 +98,7 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DisguiseContainer"]
+editor/display_folded = true
 anchor_left = 0.061
 anchor_top = 0.154
 anchor_right = 0.939
@@ -126,13 +131,14 @@ icon_scale = 0.5
 script = ExtResource( 8 )
 
 [node name="NightVisionContainer" type="NinePatchRect" parent="."]
+editor/display_folded = true
 anchor_left = 0.06
-anchor_right = 0.112
-anchor_bottom = 0.052
+anchor_right = 0.11
+anchor_bottom = 0.036
 margin_left = 147.298
 margin_top = 31.0
-margin_right = 257.05
-margin_bottom = 64.8
+margin_right = 259.098
+margin_bottom = 74.4
 rect_min_size = Vector2( 140, 65 )
 theme = ExtResource( 5 )
 texture = ExtResource( 6 )
@@ -142,6 +148,7 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NightVisionContainer"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -218,3 +225,34 @@ auto_height = true
 max_columns = 5
 same_column_width = true
 icon_scale = 0.5
+
+[node name="MenuContainer" type="NinePatchRect" parent="."]
+anchor_left = 0.929
+anchor_top = 0.033
+anchor_right = 0.929
+anchor_bottom = 0.033
+margin_left = -0.296021
+margin_top = 0.200001
+margin_right = 45.704
+margin_bottom = 43.2
+texture = ExtResource( 12 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MenuButton" type="Button" parent="MenuContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 34.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource( 13 )
+flat = true
+
+[node name="Menu" parent="." instance=ExtResource( 14 )]
+[connection signal="pressed" from="MenuContainer/MenuButton" to="Menu" method="show_menu"]
