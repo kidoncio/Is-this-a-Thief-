@@ -49,6 +49,7 @@ const CONFIGURATION_JSON: String = "res://Configuration/Configuration.json"
 const TUTORIAL_MESSAGES_JSON: String = "res://Scenes/Levels/TutorialMessages.json"
 
 # Scenes
+const LEVEL_SCENE: String = "res://Scenes/Levels/Level%s.tscn"
 const TUTORIAL_SCENE: String = "res://Scenes/Levels/Tutorial.tscn"
 const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
 const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
