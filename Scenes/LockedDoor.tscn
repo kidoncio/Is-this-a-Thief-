@@ -8,13 +8,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.3759, 19.5038 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 3 )
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -53,7 +53,7 @@ margin_left = 0.19368
 margin_top = 17.7644
 margin_right = 51.1937
 margin_bottom = 35.7644
-theme = SubResource( 2 )
+theme = SubResource( 3 )
 text = "TESTE"
 [connection signal="combination_correct" from="CanvasLayer/NumberPad" to="." method="_on_NumberPad_combination_correct"]
 [connection signal="body_entered" from="ExitDetection" to="." method="_on_ExitDetection_body_entered"]
