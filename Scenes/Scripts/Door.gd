@@ -10,6 +10,7 @@ const CLOSE_ANIMATION: String = "close"
 func _on_Door_body_entered(body):
 	if body != Global.Player:
 		open()
+		verify_if_is_playing_animation_and_open()
 	else:
 		player_can_open = true
 
@@ -46,3 +47,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		is_open = false
 	else:
 		is_open = true
+
+
+func verify_if_is_playing_animation_and_open() -> void:
+	if $AnimationPlayer.is_playing():
+			yield(get_tree().create_timer(0.5), "timeout")
+			
+			open()
