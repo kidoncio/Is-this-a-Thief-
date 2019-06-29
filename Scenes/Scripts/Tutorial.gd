@@ -2,6 +2,8 @@ extends Node2D
 
 var text
 
+const MESSAGE_TRANSITION_ANIMATION: String = "MessageTransition"
+
 func _ready():
 	add_to_group(Global.INTERFACE_GROUP)
 	
@@ -34,6 +36,7 @@ func update_pointer_position(number: int, play_sfx: bool = true) -> void:
 	$TutorialGUI/Popup/Label.text = text[str(number)]
 	
 	if play_sfx && pointer.position != marker.position:
+		$TutorialGUI/AnimationPlayer.play(MESSAGE_TRANSITION_ANIMATION)
 		play_sfx()
 
 func play_sfx() -> void:
@@ -50,7 +53,6 @@ func _on_ObjectiveDoor_body_entered(body):
 
 func _on_ObjectiveNightVision_body_entered(body):
 	update_pointer_position(4)
-	DarkVision_mode()
 
 
 func _on_Suitcase_body_entered(body):

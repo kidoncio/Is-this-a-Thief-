@@ -43,6 +43,7 @@ const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_ico
 const TUTORIAL_MESSAGES_JSON: String = "res://Scenes/Levels/TutorialMessages.json"
 
 # Scenes
+const TUTORIAL_SCENE: String = "res://Scenes/Levels/Tutorial.tscn"
 const VICTORY_SCENE: String = "res://Scenes/Victory.tscn"
 const GAME_OVER_SCENE: String = "res://Scenes/GameOver.tscn"
 
