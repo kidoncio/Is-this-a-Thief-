@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scenes/Scripts/Door.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Tiles/tile_463.png" type="Texture" id=2]
-[ext_resource path="res://SFX/doorOpen_1.ogg" type="AudioStream" id=3]
-[ext_resource path="res://SFX/doorClose_1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://SFX/doorClose_1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://SFX/doorOpen_1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.2484, 8.47176 )
@@ -14,7 +14,7 @@ cull_mode = 1
 polygon = PoolVector2Array( -29.3346, -12.4458, 34.3371, -12.6348, 34.4316, 3.42486, -29.4291, 3.80274 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 36.0343, 48.208 )
+extents = Vector2( 36.0343, 54.8371 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "close"
@@ -54,7 +54,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
@@ -106,7 +106,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("AudioStreamPlayer2D:playing")

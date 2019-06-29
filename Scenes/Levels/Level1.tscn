@@ -205,7 +205,7 @@ margin_right = 0.0799866
 custom_constants/separation = 20
 
 [node name="EKey" type="HBoxContainer" parent="KeyBoardInfo/NinePatchRect/VBoxContainer"]
-margin_right = 190.0
+margin_right = 189.0
 margin_bottom = 32.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="KeyBoardInfo/NinePatchRect/VBoxContainer/EKey"]
@@ -223,7 +223,7 @@ text = "Disguise"
 
 [node name="SpaceKey" type="HBoxContainer" parent="KeyBoardInfo/NinePatchRect/VBoxContainer"]
 margin_top = 52.0
-margin_right = 190.0
+margin_right = 189.0
 margin_bottom = 84.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="KeyBoardInfo/NinePatchRect/VBoxContainer/SpaceKey"]
@@ -253,5 +253,5 @@ margin_left = 256.63
 margin_top = 220.245
 margin_right = 320.63
 margin_bottom = 284.245
-[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
+[connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor2" method="_on_Computer_combination"]

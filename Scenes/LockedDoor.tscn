@@ -25,7 +25,7 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
 
-[node name="LockedDoor" index="0" instance=ExtResource( 1 )]
+[node name="LockedDoor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
@@ -62,6 +62,5 @@ margin_top = 17.7644
 margin_right = 51.1937
 margin_bottom = 35.7644
 theme = SubResource( 3 )
-text = "TESTE"
 [connection signal="combination_correct" from="CanvasLayer/NumberPad" to="." method="_on_NumberPad_combination_correct"]
 [connection signal="body_entered" from="ExitDetection" to="." method="_on_ExitDetection_body_entered"]
