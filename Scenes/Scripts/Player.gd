@@ -89,7 +89,9 @@ func toggle_disguise() -> void:
 
 
 func reveal() -> void:
-	$DisguiseLabel.visible = false
+	$CanvasLayer/VBoxContainer/DisguiseContainer/DisguiseLabel.visible = false
+	$CanvasLayer/VBoxContainer/DisguiseContainer/DisguiseSprite.visible = false
+	
 	$Sprite.texture = load(Global.PLAYER_SPRITE)
 	$Light2D.texture = load(Global.PLAYER_SPRITE)
 	collision_layer = Global.PLAYER_LAYER
@@ -99,7 +101,9 @@ func reveal() -> void:
 
 
 func disguise() -> void:
-	$DisguiseLabel.visible = true
+	$CanvasLayer/VBoxContainer/DisguiseContainer/DisguiseLabel.visible = true
+	$CanvasLayer/VBoxContainer/DisguiseContainer/DisguiseSprite.visible = true
+	
 	$Sprite.texture = load(Global.SOLDIER_SPRITE)
 	$Light2D.texture = load(Global.SOLDIER_SPRITE)
 	collision_layer = Global.DISGUISE_LAYER
@@ -118,16 +122,14 @@ func disguise_label_update() -> void:
 	if !disguised:
 		return
 	
-	$DisguiseLabel.rect_rotation = - rotation_degrees
-	$DisguiseLabel.text = str($DisguiseTimer.time_left).pad_decimals(2)
+	$CanvasLayer/VBoxContainer/DisguiseContainer/DisguiseLabel.text = str($DisguiseTimer.time_left).pad_decimals(2)
 
 
 func night_vision_label_update() -> void:
 	if !night_vision_is_active:
 		return
 	
-	$NightVisionLabel.rect_rotation = - rotation_degrees
-	$NightVisionLabel.text = str($NightVisionTimer.time_left).pad_decimals(2)
+	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionLabel.text = str($NightVisionTimer.time_left).pad_decimals(2)
 
 
 func disguise_display_update() -> void:
@@ -155,12 +157,15 @@ func change_to_night_vision() -> void:
 	
 	night_vision_is_active = true
 	
-	$NightVisionLabel.visible = true
+	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionLabel.visible = true
+	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionSprite.visible = true
+	
 	$NightVisionTimer.start()
 
 
 func change_to_dark_vision() -> void:
-	$NightVisionLabel.visible = false
+	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionLabel.visible = false
+	$CanvasLayer/VBoxContainer/NightVisionContainer/NightVisionSprite.visible = false
 	
 	if !night_vision_is_active:
 		return

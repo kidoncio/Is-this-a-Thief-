@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://GFX/PNG/Hitman 1/hitman1_stand.png" type="Texture" id=3]
 [ext_resource path="res://Theme.tres" type="Theme" id=4]
+[ext_resource path="res://GFX/nightvision.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png" type="Texture" id=6]
 
 [node name="Player" index="0" instance=ExtResource( 1 )]
 collision_mask = 11
@@ -29,23 +31,50 @@ current = true
 
 [node name="DisguiseTimer" type="Timer" parent="." index="6"]
 
-[node name="DisguiseLabel" type="Label" parent="." index="7"]
-margin_left = -2.10529
-margin_top = 61.0526
-margin_right = 82.8947
-margin_bottom = 96.0526
+[node name="NightVisionTimer" type="Timer" parent="." index="7"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" index="0"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -100.0
+margin_right = 50.0
+custom_constants/separation = 15
+
+[node name="NightVisionContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" index="0"]
+margin_right = 100.0
+margin_bottom = 17.0
+
+[node name="NightVisionLabel" type="Label" parent="CanvasLayer/VBoxContainer/NightVisionContainer" index="0"]
+margin_right = 35.0
+margin_bottom = 17.0
 theme = ExtResource( 4 )
 text = "0.00"
 
-[node name="NightVisionTimer" type="Timer" parent="." index="8"]
+[node name="NightVisionSprite" type="Sprite" parent="CanvasLayer/VBoxContainer/NightVisionContainer" index="1"]
+position = Vector2( -24.3738, 8.526 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
 
-[node name="NightVisionLabel" type="Label" parent="." index="9"]
-margin_left = 0.440125
-margin_top = 100.346
-margin_right = 35.4401
-margin_bottom = 117.346
+[node name="DisguiseContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" index="1"]
+margin_top = 32.0
+margin_right = 100.0
+margin_bottom = 49.0
+
+[node name="DisguiseLabel" type="Label" parent="CanvasLayer/VBoxContainer/DisguiseContainer" index="0"]
+margin_right = 35.0
+margin_bottom = 17.0
 theme = ExtResource( 4 )
 text = "0.00"
+
+[node name="DisguiseSprite" type="Sprite" parent="CanvasLayer/VBoxContainer/DisguiseContainer" index="1"]
+position = Vector2( -24.3738, 8.526 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
 [connection signal="timeout" from="VisionModeTimer" to="." method="_on_VisionModeTimer_timeout"]
 [connection signal="timeout" from="DisguiseTimer" to="." method="reveal"]
 [connection signal="timeout" from="NightVisionTimer" to="." method="_on_NightVisionTimer_timeout"]
