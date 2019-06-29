@@ -5,7 +5,7 @@
 [ext_resource path="res://GFX/PNG/Hitman 1/hitman1_stand.png" type="Texture" id=3]
 [ext_resource path="res://Theme.tres" type="Theme" id=4]
 
-[node name="Player" instance=ExtResource( 1 )]
+[node name="Player" index="0" instance=ExtResource( 1 )]
 collision_mask = 11
 script = ExtResource( 2 )
 
@@ -36,5 +36,16 @@ margin_right = 82.8947
 margin_bottom = 96.0526
 theme = ExtResource( 4 )
 text = "0.00"
+
+[node name="NightVisionTimer" type="Timer" parent="." index="8"]
+
+[node name="NightVisionLabel" type="Label" parent="." index="9"]
+margin_left = 0.440125
+margin_top = 100.346
+margin_right = 35.4401
+margin_bottom = 117.346
+theme = ExtResource( 4 )
+text = "0.00"
 [connection signal="timeout" from="VisionModeTimer" to="." method="_on_VisionModeTimer_timeout"]
 [connection signal="timeout" from="DisguiseTimer" to="." method="reveal"]
+[connection signal="timeout" from="NightVisionTimer" to="." method="_on_NightVisionTimer_timeout"]

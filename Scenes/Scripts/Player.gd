@@ -2,7 +2,7 @@ extends "res://Scenes/Scripts/Character.gd"
 
 var motion: Vector2 = Vector2()
 
-var night_vision: bool = false
+var night_vision_is_active: bool = false
 var vision_change_on_cooldown: bool = false
 var vision_mode = Global.DARK_VISION_MODE_METHOD
 
@@ -21,9 +21,13 @@ var velocity_multiplier: float = 1
 func _ready():
 	Global.Player = self
 	collision_layer = Global.PLAYER_LAYER
+	
 	$DisguiseTimer.wait_time = disguise_duration
+	$NightVisionTimer.wait_time = night_vision_duration
+	
 	reveal()
 	disguise_display_update()
+	change_to_dark_vision()
 	night_vision_display_update()
 
 
@@ -31,6 +35,7 @@ func _process(delta):
 	update_motion(delta)
 	move_and_slide(motion * velocity_multiplier)
 	disguise_label_update()
+	night_vision_label_update()
 
 
 func update_motion(delta: float) -> void:
@@ -66,14 +71,9 @@ func cycle_vision_mode():
 	vision_change_on_cooldown = true
 	
 	if vision_mode == Global.DARK_VISION_MODE_METHOD && night_visions > 0:
-		night_visions -= 1
-		night_vision_display_update()
-		
-		get_tree().call_group(Global.INTERFACE_GROUP, Global.NIGHT_VISION_MODE_METHOD)
-		vision_mode = Global.NIGHT_VISION_MODE_METHOD
+		change_to_night_vision()
 	elif vision_mode == Global.NIGHT_VISION_MODE_METHOD:
-		get_tree().call_group(Global.INTERFACE_GROUP, Global.DARK_VISION_MODE_METHOD)
-		vision_mode = Global.DARK_VISION_MODE_METHOD
+		change_to_dark_vision()
 	
 	$VisionModeTimer.start()
 
@@ -122,6 +122,14 @@ func disguise_label_update() -> void:
 	$DisguiseLabel.text = str($DisguiseTimer.time_left).pad_decimals(2)
 
 
+func night_vision_label_update() -> void:
+	if !night_vision_is_active:
+		return
+	
+	$NightVisionLabel.rect_rotation = - rotation_degrees
+	$NightVisionLabel.text = str($NightVisionTimer.time_left).pad_decimals(2)
+
+
 func disguise_display_update() -> void:
 	get_tree().call_group(Global.DISGUISE_DISPLAY_GROUP,  Global.UPDATE_DISGUISE_DISPLAY_METHOD, disguises)
 
@@ -136,3 +144,37 @@ func collect_suitcase() -> void:
 	var loot = Node.new()
 	loot.set_name(Global.SUITCASE_NODE)
 	add_child(loot)
+
+
+func change_to_night_vision() -> void:
+	night_visions -= 1
+	night_vision_display_update()
+	
+	get_tree().call_group(Global.INTERFACE_GROUP, Global.NIGHT_VISION_MODE_METHOD)
+	vision_mode = Global.NIGHT_VISION_MODE_METHOD
+	
+	night_vision_is_active = true
+	
+	$NightVisionLabel.visible = true
+	$NightVisionTimer.start()
+
+
+func change_to_dark_vision() -> void:
+	$NightVisionLabel.visible = false
+	
+	if !night_vision_is_active:
+		return
+	
+	night_vision_is_active = false
+	
+	get_tree().call_group(Global.INTERFACE_GROUP, Global.DARK_VISION_MODE_METHOD)
+	vision_mode = Global.DARK_VISION_MODE_METHOD
+	
+	if !$NightVisionTimer.is_stopped():
+		$NightVisionTimer.stop()
+
+func _on_NightVisionTimer_timeout():
+	if !night_vision_is_active:
+		return
+	
+	change_to_dark_vision()
