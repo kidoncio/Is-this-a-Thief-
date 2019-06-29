@@ -42,7 +42,7 @@ func _input_event(viewport, event, shape_idx):
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == 'close':
+	if anim_name == CLOSE_ANIMATION:
 		is_open = false
 	else:
 		is_open = true
