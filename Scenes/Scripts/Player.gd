@@ -24,6 +24,7 @@ func _ready():
 	$DisguiseTimer.wait_time = disguise_duration
 	reveal()
 	disguise_display_update()
+	night_vision_display_update()
 
 
 func _process(delta):
@@ -54,7 +55,7 @@ func _input(event) -> void:
 	# Vision Mode Input
 	if !vision_change_on_cooldown && Input.is_action_just_pressed("ui_select"):
 		cycle_vision_mode()
-		
+	
 	
 	# Disguise Input
 	if Input.is_action_just_pressed("toggle_disguise"):
@@ -64,7 +65,10 @@ func _input(event) -> void:
 func cycle_vision_mode():
 	vision_change_on_cooldown = true
 	
-	if vision_mode == Global.DARK_VISION_MODE_METHOD:
+	if vision_mode == Global.DARK_VISION_MODE_METHOD && night_visions > 0:
+		night_visions -= 1
+		night_vision_display_update()
+		
 		get_tree().call_group(Global.INTERFACE_GROUP, Global.NIGHT_VISION_MODE_METHOD)
 		vision_mode = Global.NIGHT_VISION_MODE_METHOD
 	elif vision_mode == Global.NIGHT_VISION_MODE_METHOD:
@@ -120,6 +124,10 @@ func disguise_label_update() -> void:
 
 func disguise_display_update() -> void:
 	get_tree().call_group(Global.DISGUISE_DISPLAY_GROUP,  Global.UPDATE_DISGUISE_DISPLAY_METHOD, disguises)
+
+
+func night_vision_display_update() -> void:
+	get_tree().call_group(Global.NIGHT_VISION_DISPLAY_GROUP, Global.UPDATE_NIGHT_VISION_DISPLAY_METHOD, night_visions)
 
 
 func collect_suitcase() -> void:

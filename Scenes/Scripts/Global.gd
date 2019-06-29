@@ -14,6 +14,7 @@ const LABELS_GROUP: String = "labels"
 const INTERFACE_GROUP: String = "interface"
 const SUSPICION_METER_GROUP: String = "SuspicionMeter"
 const DISGUISE_DISPLAY_GROUP: String = "DisguiseDisplay"
+const NIGHT_VISION_DISPLAY_GROUP: String = "NightVisionDisplay"
 
 # Volume
 var VOLUME_VISION_SFX: float = -20.0
@@ -24,6 +25,7 @@ const COLLECT_LOOT_METHOD: String = "collect_loot"
 const DARK_VISION_MODE_METHOD: String = "dark_vision_mode"
 const NIGHT_VISION_MODE_METHOD: String = "night_vision_mode"
 const UPDATE_DISGUISE_DISPLAY_METHOD: String = "update_disguise_display"
+const UPDATE_NIGHT_VISION_DISPLAY_METHOD: String = "update_night_vision_display"
 
 # Assets Path - !important
 const nightvision_on_sfx: String = "res://SFX/nightvision.wav"
@@ -35,6 +37,7 @@ const BLUE_LIGHT: String = "res://GFX/Interface/PNG/dotBlue.png"
 const GREEN_LIGHT: String = "res://GFX/Interface/PNG/dotGreen.png"
 const PLAYER_SPRITE: String = "res://GFX/PNG/Hitman 1/hitman1_stand.png"
 const SOLDIER_SPRITE: String = "res://GFX/PNG/Soldier 1/soldier1_stand.png"
+const NIGHT_VISION_ICON: String = "res://GFX/nightvision.png"
 const FOLDER_SPRITE_ICON: String = "res://GFX/Loot/folder.png"
 const SUITCASE_SPRITE_ICON: String = "res://GFX/Loot/suitcase.png"
 const DISGUISE_HELMET_ICON: String = "res://GFX/Interface/PNG/soldier_helmet_icon_64x64.png"

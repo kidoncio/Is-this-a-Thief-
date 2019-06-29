@@ -79,7 +79,6 @@ fill_mode = 5
 script = ExtResource( 4 )
 
 [node name="DisguiseContainer" type="NinePatchRect" parent="."]
-editor/display_folded = true
 anchor_right = 0.052
 anchor_bottom = 0.052
 margin_left = 34.0
@@ -127,7 +126,6 @@ icon_scale = 0.5
 script = ExtResource( 8 )
 
 [node name="NightVisionContainer" type="NinePatchRect" parent="."]
-editor/display_folded = true
 anchor_left = 0.06
 anchor_right = 0.112
 anchor_bottom = 0.052
@@ -160,7 +158,6 @@ text = "Night vision"
 
 [node name="NightVisionDisplay" type="ItemList" parent="NightVisionContainer/VBoxContainer" groups=[
 "NightVisionDisplay",
-"DisguiseDisplay",
 ]]
 margin_top = 21.0
 margin_right = 142.0
