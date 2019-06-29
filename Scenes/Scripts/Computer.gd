@@ -3,7 +3,7 @@ extends Area2D
 var can_click: bool = false
 var combination = []
 
-export var lock_group: String = "UNSET"
+export var lock_group: String = ""
 export var combination_length: int = 4
 
 onready var _combination_generator = get_tree().get_root().find_node("CombinationGenerator", true, false)
@@ -42,5 +42,5 @@ func _on_Computer_body_exited(body):
 
 
 func _input_event(viewport, event, shape_idx):
-	if can_click && Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if can_click && Input.is_mouse_button_pressed(BUTTON_LEFT) && lock_group != "":
 		$CanvasLayer/ComputerPopup.popup_centered()
