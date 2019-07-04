@@ -91,7 +91,8 @@ func chase_the_Player() -> void:
 	
 	motion = (lastPlayerPosition - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
 	
-	look_at(lastPlayerPosition)
+	if !is_on_wall():
+		look_at(lastPlayerPosition)
 	
 	move_and_slide(motion)
 
