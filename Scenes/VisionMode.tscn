@@ -4,7 +4,7 @@
 
 [node name="VisionMode" type="CanvasModulate"]
 editor/display_folded = true
-color = Color( 0.0823529, 0.121569, 0.298039, 1 )
+color = Color( 0.105882, 0.156863, 0.376471, 1 )
 script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
