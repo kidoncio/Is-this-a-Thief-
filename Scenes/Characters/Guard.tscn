@@ -9,7 +9,7 @@
 radius = 22.4806
 height = 2.93007
 
-[node name="Guard" index="0" groups=[
+[node name="Guard" groups=[
 "NPC",
 ] instance=ExtResource( 1 )]
 collision_layer = 8
@@ -23,6 +23,7 @@ texture = ExtResource( 4 )
 
 [node name="Timer" type="Timer" parent="." index="4"]
 wait_time = 5.0
+one_shot = true
 
 [node name="PlayerSeenTimer" type="Timer" parent="." index="5"]
 wait_time = 5.0
@@ -32,5 +33,6 @@ one_shot = true
 
 [node name="GuardCollisionShape2D" type="CollisionShape2D" parent="GuardDetection" index="0"]
 shape = SubResource( 1 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="PlayerSeenTimer" to="." method="_on_PlayerSeenTimer_timeout"]
 [connection signal="body_entered" from="GuardDetection" to="." method="_on_GuardDetection_body_entered"]
