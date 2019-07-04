@@ -10,17 +10,22 @@ func _ready():
 
 
 func _process(delta):
-	$Torch.color = COLOR_WHITE
+	var isDetected: bool = Player_is_detected()
 	
-	if Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD:
+	if Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD && !isDetected:
 		$Torch.enabled = false
+	elif Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD && isDetected:
+		$Torch.enabled = true
 	
+	if isDetected:
+		$Torch.color = COLOR_RED
+	else:
+		$Torch.color = COLOR_WHITE
+
+
+func _physics_process(delta):
 	if Player_is_detected():
 		get_tree().call_group(Global.SUSPICION_METER_GROUP, Global.PLAYER_SEEN_METHOD)
-		$Torch.color = COLOR_RED
-		
-		if Global.Player.vision_mode == Global.DARK_VISION_MODE_METHOD:
-			$Torch.enabled = true
 
 
 func Player_is_in_FOV_TOLERANCE() -> bool:

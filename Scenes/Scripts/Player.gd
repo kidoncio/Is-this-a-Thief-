@@ -32,10 +32,13 @@ func _ready():
 
 
 func _process(delta):
-	update_motion(delta)
-	move_and_slide(motion * velocity_multiplier)
 	disguise_label_update()
 	night_vision_label_update()
+
+
+func _physics_process(delta):
+	update_motion(delta)
+	move_and_slide(motion * velocity_multiplier)
 
 
 func update_motion(delta: float) -> void:

@@ -4,6 +4,8 @@ var motion: Vector2 = Vector2()
 var possible_destinations: Array = []
 var path: Array = []
 var destination: Vector2 = Vector2()
+var playerIsDetectedByGuard: bool = false
+var lastPlayerPosition = null
 
 export var WALK_SLOWDOWN: float = 0.35
 export var NAV_STOP_THRESHOLD: int = 5 # pixels
@@ -20,7 +22,7 @@ func _ready():
 	make_path()
 
 
-func _process(delta):
+func _physics_process(delta):
 	navigate()
 
 
@@ -28,23 +30,29 @@ func move() -> void:
 	motion = (destination - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
 	
 	if is_on_wall():
-		yield(get_tree().create_timer(1.0), "timeout")
-		
-		if is_on_wall():
-			make_path()
-	
-	look_at(destination)
+		make_path()
+	else:
+		look_at(destination)
 	
 	move_and_slide(motion)
 
 
 func navigate() -> void:
-	if Player_is_detected():
-		yield(get_tree().create_timer(0.3), "timeout")
+	var playerIsDetected: bool = Player_is_detected()
+	
+	if playerIsDetected:
+		if !playerIsDetectedByGuard:
+			activate_player_seen_timer()
 		
-		if Player_is_detected():
-			chase_the_Player()
-			return
+		lastPlayerPosition = Global.Player.position
+		
+		chase_the_Player()
+		
+		return
+	
+	if !$PlayerSeenTimer.is_stopped():
+		chase_the_Player()
+		return
 	
 	var distance_to_destination: float = position.distance_to(path[0])
 	destination = path[0]
@@ -78,8 +86,31 @@ func _on_Timer_timeout() -> void:
 
 
 func chase_the_Player() -> void:
-	motion = (Global.Player.position - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
+	if !lastPlayerPosition:
+		return
 	
-	look_at(Global.Player.position)
+	motion = (lastPlayerPosition - position).normalized() * (MAX_SPEED * WALK_SLOWDOWN)
+	
+	look_at(lastPlayerPosition)
 	
 	move_and_slide(motion)
+
+
+func activate_player_seen_timer() -> void:
+	if !$PlayerSeenTimer.is_stopped():
+		return
+	
+	playerIsDetectedByGuard = true
+	$PlayerSeenTimer.start()
+
+
+func _on_PlayerSeenTimer_timeout() -> void:
+	playerIsDetectedByGuard = false
+	lastPlayerPosition = null
+
+
+func _on_GuardDetection_body_entered(body) -> void:
+	if body != Global.Player:
+		return
+	
+	get_tree().change_scene(Global.GAME_OVER_SCENE)

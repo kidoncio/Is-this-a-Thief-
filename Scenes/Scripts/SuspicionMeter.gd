@@ -2,10 +2,10 @@ extends TextureProgress
 
 var suspicion: float = 0
 
-export var suspicion_step: float = 0.4 # How much suspicion goes up every time we're seen
-export var suspicion_dropoff: float = 0.01 # How fast suspicion falls
+export var suspicion_step: float = 1.0 # How much suspicion goes up every time we're seen
+export var suspicion_dropoff: float = 0.5 # How fast suspicion falls
 
-func _process(delta):
+func _physics_process(delta):
 	update_suspicion()
 
 
@@ -24,9 +24,9 @@ func update_suspicion() -> void:
 	suspicion -= suspicion_dropoff
 	
 	if suspicion > 65:
-		suspicion_step = 0.8
+		suspicion_step = suspicion_step * 2
 	else:
-		suspicion_step = 0.4
+		suspicion_step = suspicion_step
 	
 	if suspicion > max_value:
 		suspicion = 100
