@@ -27,4 +27,4 @@ A thief game made with Godot.
 
 [Sounds Effects](https://opengameart.org/content/50-rpg-sound-effects "Sounds Effects") - Made by [Kenney](https://opengameart.org/users/kenney "Kenney")
 
-<iframe frameborder="0" src="https://itch.io/embed/444097?bg_color=1E1E1E&amp;fg_color=C2C2BD&amp;link_color=F2CE1B&amp;border_color=4b4b4b" width="552" height="167"><a href="https://kidoncio.itch.io/is-this-a-thief">Is this a Thief? by Kidoncio</a></iframe>
+[![Available on itch.io](https://i.imgur.com/gTACXsx.png "Available on itch.io")](https://kidoncio.itch.io/is-this-a-thief "Available on itch.io")
